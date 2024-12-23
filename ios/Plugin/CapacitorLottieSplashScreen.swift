@@ -48,9 +48,8 @@ extension AnimationEventListener {
     {
       animationView = .init(name: filename)
       animationView!.frame = UIScreen.main.bounds
-      animationView!.contentMode = .scaleAspectFill
       animationView!.loopMode = .playOnce
-      animationView!.animationSpeed = 1
+      animationView!.animationSpeed = 0.7
       view.addSubview(animationView!)
       animationView!.play { completed in
         if completed {
