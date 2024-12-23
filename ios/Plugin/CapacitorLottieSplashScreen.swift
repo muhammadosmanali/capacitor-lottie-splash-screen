@@ -41,11 +41,13 @@ extension AnimationEventListener {
     return value
   }
 
-  public func loadLottie(view: UIView?, path: String?) {
+  public func loadLottie(view: UIView?, path: String?, appearance: String?) {
     if let view = view,
       let path = path,
       let filename = path.components(separatedBy: ".").first
     {
+      let dark = "dark"
+      view.backgroundColor = (appearance == dark) ? .black : .white 
       animationView = .init(name: filename)
       animationView!.frame = UIScreen.main.bounds
       animationView!.loopMode = .playOnce

@@ -21,16 +21,19 @@ public class CapacitorLottieSplashScreenPlugin: CAPPlugin {
           if UITraitCollection.current.userInterfaceStyle == .dark {
             implementation.loadLottie(
               view: self.bridge?.viewController?.view,
-              path: self.getConfigValue("lottieAnimationLocationDark") as? String)
+              path: self.getConfigValue("lottieAnimationLocationDark") as? String),
+              appearance: "dark"
           } else {
             implementation.loadLottie(
               view: self.bridge?.viewController?.view,
-              path: self.getConfigValue("lottieAnimationLocationLight") as? String)
+              path: self.getConfigValue("lottieAnimationLocationLight") as? String),
+              appearance: "light"
           }
         } else {
           implementation.loadLottie(
             view: self.bridge?.viewController?.view,
-            path: self.getConfigValue("lottieAnimationLocationLight") as? String)
+            path: self.getConfigValue("lottieAnimationLocationLight") as? String),
+            appearance: "light"
         }
 
       }
