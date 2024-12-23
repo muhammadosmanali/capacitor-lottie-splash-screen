@@ -17,16 +17,23 @@ public class CapacitorLottieSplashScreenPlugin: CAPPlugin {
     if CapacitorLottieSplashScreenPlugin.isEnabledStatic {
       let isEnabled = getConfigValue("enabled") as? Bool ?? true
       if isEnabled {
-        switch traitCollection.userInterfaceStyle {
-        case .light, .unspecified:
+        if #available(IOS 13.0, *) {
+          switch UITraitCollection.current.userInterfaceStyle {
+          case .light, .unspecified:
+            implementation.loadLottie(
+              view: self.bridge?.viewController?.view,
+              path: self.getConfigValue("lottieAnimationLocationLight") as? String)
+          case .dark:
+            implementation.loadLottie(
+              view: self.bridge?.viewController?.view,
+              path: self.getConfigValue("lottieAnimationLocationDark") as? String)
+          }
+        } else {
           implementation.loadLottie(
             view: self.bridge?.viewController?.view,
             path: self.getConfigValue("lottieAnimationLocationLight") as? String)
-        case .dark:
-          implementation.loadLottie(
-            view: self.bridge?.viewController?.view,
-            path: self.getConfigValue("lottieAnimationLocationDark") as? String)
         }
+
       }
       implementation.onAnimationEvent = onAnimationEvent
     }

@@ -47,15 +47,15 @@ extension AnimationEventListener {
       let filename = path.components(separatedBy: ".").first
     {
       let screenSize = UIScreen.main.bounds
-      let autoresizingMask: UIView.AutoresizingMask = [
+      var autoresizingMask: UIView.AutoresizingMask = [
         .flexibleTopMargin, .flexibleLeftMargin, .flexibleBottomMargin, .flexibleRightMargin,
       ]
       let portrait =
         UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.portrait
         || UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.portraitUpsideDown
       autoresizingMask.insert(portrait ? .flexibleWidth : .flexibleHeight)
-      animationWidth = screenSize.width
-      animationHeight = screenSize.height
+      let animationWidth = screenSize.width
+      let animationHeight = screenSize.height
       animationView = .init(name: filename)
       animationView!.autoresizingMask = autoresizingMask
       animationView!.frame = CGRect(x: 0, y: 0, width: animationWidth, height: animationHeight)
