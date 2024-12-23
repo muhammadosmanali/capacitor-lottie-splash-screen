@@ -16,5 +16,5 @@ export interface CapacitorLottieSplashScreenPlugin {
     isAnimating(): Promise<{
         isAnimating: boolean;
     }>;
-    addListener(eventName: 'onAnimationEnd', listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+    addListener(eventName: 'onAnimationEnd', listenerFunc: () => void): Promise<PluginListenerHandle> | PluginListenerHandle;
 }

@@ -1,4 +1,4 @@
-var capacitorCapacitorLottieSplashScreen = (function (exports, core) {
+var capacitorLottieSplashScreen = (function (exports, core) {
     'use strict';
 
     const CapacitorLottieSplashScreen = core.registerPlugin('CapacitorLottieSplashScreen', {
