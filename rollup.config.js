@@ -4,7 +4,7 @@ export default {
     {
       file: 'dist/plugin.js',
       format: 'iife',
-      name: 'capacitorCapacitorLottieSplashScreen',
+      name: 'capacitorLottieSplashScreen',
       globals: {
         '@capacitor/core': 'capacitorExports',
       },

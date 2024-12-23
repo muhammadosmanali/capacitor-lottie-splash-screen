@@ -1,11 +1,11 @@
-# @morphood/capacitor-lottie-splash-screen
+# @capacitor/lottie-splash-screen
 
 Lottie splash screen plugin for capacitor
 
 ## Install
 
 ```bash
-npm install @morphood/capacitor-lottie-splash-screen
+npm install git+https://github.com/muhammadosmanali/capacitor-lottie-splash-screen.git
 npx cap sync
 ```
 
