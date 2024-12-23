@@ -17,7 +17,7 @@ public class CapacitorLottieSplashScreenPlugin: CAPPlugin {
     if CapacitorLottieSplashScreenPlugin.isEnabledStatic {
       let isEnabled = getConfigValue("enabled") as? Bool ?? true
       if isEnabled {
-        if #available(IOS 13.0, *) {
+        if #available(iOS 13.0, *) {
           switch UITraitCollection.current.userInterfaceStyle {
           case .light, .unspecified:
             implementation.loadLottie(

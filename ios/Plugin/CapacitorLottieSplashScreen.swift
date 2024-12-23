@@ -46,30 +46,16 @@ extension AnimationEventListener {
       let path = path,
       let filename = path.components(separatedBy: ".").first
     {
-      let screenSize = UIScreen.main.bounds
-      var autoresizingMask: UIView.AutoresizingMask = [
-        .flexibleTopMargin, .flexibleLeftMargin, .flexibleBottomMargin, .flexibleRightMargin,
-      ]
-      let portrait =
-        UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.portrait
-        || UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.portraitUpsideDown
-      autoresizingMask.insert(portrait ? .flexibleWidth : .flexibleHeight)
-      let animationWidth = screenSize.width
-      let animationHeight = screenSize.height
       animationView = .init(name: filename)
-      animationView!.autoresizingMask = autoresizingMask
-      animationView!.frame = CGRect(x: 0, y: 0, width: animationWidth, height: animationHeight)
-      animationView!.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
-      animationView!.contentMode = .scaleAspectFit
+      animationView!.frame = UIScreen.main.bounds
+      animationView!.contentMode = .scaleAspectFill
       animationView!.loopMode = .playOnce
       animationView!.animationSpeed = 1
       view.addSubview(animationView!)
       animationView!.play { completed in
         if completed {
           self.isAnimationEnded = true
-          if self.isAppLoaded {
-            self.hideSplashScreen()
-          }
+          self.hideSplashScreen()
           self.onAnimationEvent?(.onAnimationEnd)
         }
       }
