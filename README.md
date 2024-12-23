@@ -10,6 +10,7 @@ npx cap sync
 ```
 
 Add to `capacitor.config.ts` or `capcitor.config.json`
+
 ```
 CapacitorLottieSplashScreen: {
   Enabled: true,
@@ -18,6 +19,7 @@ CapacitorLottieSplashScreen: {
 ```
 
 if you were previously using Capacitor Splash Screen set the following in you capacitor config
+
 ```
 SplashScreen: {
   launchAutoHide: true,
@@ -29,11 +31,11 @@ SplashScreen: {
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
-* [`appLoaded()`](#apploaded)
-* [`isAnimating()`](#isanimating)
-* [`addListener('onAnimationEnd', ...)`](#addlisteneronanimationend)
-* [Interfaces](#interfaces)
+- [`echo(...)`](#echo)
+- [`appLoaded()`](#apploaded)
+- [`isAnimating()`](#isanimating)
+- [`addListener('onAnimationEnd', ...)`](#addlisteneronanimationend)
+- [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -52,8 +54,7 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
---------------------
-
+---
 
 ### appLoaded()
 
@@ -69,8 +70,7 @@ and touch interactions will go to the app.
 
 **Returns:** <code>Promise&lt;any&gt;</code>
 
---------------------
-
+---
 
 ### isAnimating()
 
@@ -80,13 +80,12 @@ isAnimating() => Promise<{ isAnimating: boolean; }>
 
 **Returns:** <code>Promise&lt;{ isAnimating: boolean; }&gt;</code>
 
---------------------
-
+---
 
 ### addListener('onAnimationEnd', ...)
 
 ```typescript
-addListener(eventName: 'onAnimationEnd', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'onAnimationEnd', listenerFunc: () => void) => Promise<PluginListenerHandle>
 ```
 
 | Param              | Type                          |
@@ -96,11 +95,9 @@ addListener(eventName: 'onAnimationEnd', listenerFunc: () => void) => Promise<Pl
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### PluginListenerHandle
 
