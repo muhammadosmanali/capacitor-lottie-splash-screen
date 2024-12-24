@@ -46,13 +46,11 @@ extension AnimationEventListener {
       let path = path,
       let filename = path.components(separatedBy: ".").first
     {
-      let dark = "dark"
-      view.backgroundColor = (appearance == dark) ? .black : .white 
       animationView = .init(name: filename)
       animationView!.frame = UIScreen.main.bounds
+      animationView!.contentMode = .scaleAspectFit
       animationView!.loopMode = .playOnce
       animationView!.animationSpeed = 0.7
-      view.addSubview(animationView!)
       animationView!.play { completed in
         if completed {
           self.isAnimationEnded = true
@@ -60,6 +58,13 @@ extension AnimationEventListener {
           self.onAnimationEvent?(.onAnimationEnd)
         }
       }
+      animationView!.translatesAutoresizingMaskIntoConstraints = false
+      view.addSubview(animationView!)
+
+      NSLayoutConstraint.activate([
+        animationView!.widthAnchor.constraint(equalTo: view.widthAnchor),
+        animationView!.heightAnchor.constraint(equalTo: view.heightAnchor),
+      ])
     }
   }
 
